@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "coffee-store-5c2b8": {
+      "hosting": {
+        "coffee-store": [
+          "coffee-store-5c2b8"
+        ]
+      }
+    }
+  }
+}

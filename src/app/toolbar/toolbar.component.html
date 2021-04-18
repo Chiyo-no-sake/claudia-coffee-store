@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light d-flex flex-row">
+    <div class="d-flex flex-column flex-grow-1">
+        <!-- first row -->
+        <div class="d-flex flex-row align-items-stretch">
+            <div class="col-3 d-flex flex-row justify-content-start">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="col-6 d-flex flex-row justify-content-center">
+                <a class="navbar-brand" href="#">WebTitle</a>
+            </div>
+            <div class="col-3 d-flex flex-row justify-content-end">
+                <button class="btn" type="button" aria-label="login">Login</button>
+            </div>
+        </div>
+        <!-- second row -->
+        <div class="d-flex flex-row">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav d-flex flex-lg-row justify-content-lg-center flex-column align-content-center flex-grow-1">
+                    <li *ngFor="let entry of pages"
+                        [ngClass]="{active: entry===currentPage}"
+                        class="nav-item">
+                        <a class="nav-link text-center" [routerLink]="entry.route" (click)="onEntryClicked(entry)">
+                            {{entry.label}}
+                            <span *ngIf="currentPage === entry" class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
