@@ -1,0 +1,30 @@
+$theme-colors: (
+        "primary": #804E49,
+        "dark": #0A122A,
+        "light": #FBFAF8,
+        "secondary": #698F3F,
+        "accent": #E7DECD
+);
+
+$body-bg: map-get($theme-colors, "light");
+
+$navbar-dark-color: map-get($theme-colors, "accent");
+$navbar-dark-brand-color: map-get($theme-colors, "accent");
+$navbar-dark-hover-color: map-get($theme-colors, "light");
+$navbar-dark-active-color: map-get($theme-colors, "light");
+$navbar-dark-brand-hover-color: map-get($theme-colors, "light");
+
+$navbar-light-color: map-get($theme-colors, "dark");
+$navbar-light-brand-color: map-get($theme-colors, "dark");
+$navbar-light-hover-color: map-get($theme-colors, "accent");
+$navbar-light-active-color: map-get($theme-colors, "accent");
+$navbar-light-brand-hover-color: map-get($theme-colors, "secondary");
+$btn-font-weight: 400;
+
+$font-family-sans-serif: "Montserrat";
+
+@import '~bootstrap/scss/bootstrap.scss';
+
+.text-bold {
+  font-weight: 600;
+}

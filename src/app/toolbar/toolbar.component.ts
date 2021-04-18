@@ -7,6 +7,8 @@ import {
   ViewChild
 } from '@angular/core';
 
+import {faUser} from "@fortawesome/free-solid-svg-icons/faUser";
+
 export interface Page {
   label: string;
   route: string;
@@ -15,11 +17,13 @@ export interface Page {
 @Component({
   selector: 'app-toolbar',
   templateUrl: './toolbar.component.html',
-  styleUrls: ['./toolbar.component.css']
+  styleUrls: ['./toolbar.component.scss']
 })
 export class ToolbarComponent implements OnInit {
   @Input() pages : Page[];
+
   currentPage: Page;
+  userIcon = faUser;
 
   constructor() { }
 
@@ -29,5 +33,9 @@ export class ToolbarComponent implements OnInit {
 
   onEntryClicked(entry: Page){
     this.currentPage = entry;
+  }
+
+  onLoginButtonClicked(){
+    console.log("login clicked");
   }
 }

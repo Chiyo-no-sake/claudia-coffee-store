@@ -1,29 +1,32 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light d-flex flex-row">
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark d-flex flex-row p-0">
     <div class="d-flex flex-column flex-grow-1">
         <!-- first row -->
-        <div class="d-flex flex-row align-items-stretch">
-            <div class="col-3 d-flex flex-row justify-content-start">
+        <div class="d-flex flex-row align-items-center py-2">
+            <div class="col-4 d-flex flex-row justify-content-start">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon "></span>
                 </button>
             </div>
-            <div class="col-6 d-flex flex-row justify-content-center">
-                <a class="navbar-brand" href="#">WebTitle</a>
+            <div class="col-4 d-flex flex-row justify-content-center">
+                <a class="navbar-brand text-center m-0 text-wrap" href="#">{{"Coffee Store" | uppercase}}</a>
             </div>
-            <div class="col-3 d-flex flex-row justify-content-end">
-                <button class="btn" type="button" aria-label="login">Login</button>
+            <div class="col-4 d-flex flex-row justify-content-end">
+                <button class="btn btn-accent text-dark align-self-center login-btn" type="button" aria-label="login" (click)="onLoginButtonClicked()">
+                    Login
+                    <fa-icon [icon]="userIcon" class="ml-1"></fa-icon>
+                </button>
             </div>
         </div>
         <!-- second row -->
         <div class="d-flex flex-row">
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse bg-primary m-0" id="navbarSupportedContent">
                 <ul class="navbar-nav d-flex flex-lg-row justify-content-lg-center flex-column align-content-center flex-grow-1">
                     <li *ngFor="let entry of pages"
-                        [ngClass]="{active: entry===currentPage}"
-                        class="nav-item">
+                        [ngClass]="{active: currentPage===entry}"
+                        class="nav-item px-2">
                         <a class="nav-link text-center" [routerLink]="entry.route" (click)="onEntryClicked(entry)">
-                            {{entry.label}}
+                            {{entry.label | uppercase}}
                             <span *ngIf="currentPage === entry" class="sr-only">(current)</span>
                         </a>
                     </li>
